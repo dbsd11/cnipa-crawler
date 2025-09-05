@@ -1,3 +1,4 @@
+import os
 import math
 import time
 from typing import Dict
@@ -190,7 +191,7 @@ def get_single_patent(b, item_idx: int, patents: Dict, try_times: int = 5):
 # 初始化浏览器并设置启用允许弹出式窗口(TODO: 目前只想到了pyautogui)
 b = web.get_browser('Chrome',
     options = ['--no-sandbox'],
-    browser_driver_path = r"C:\Users\bison\appdata\roaming\undetected_chromedriver\local_undetected_chromedriver.exe",
+    browser_driver_path = os.path.abspath('local_undetected_chromedriver.exe'),
     use_undetected=True)
 b.maximize_window()
 b.get("chrome://settings/content/popups")
